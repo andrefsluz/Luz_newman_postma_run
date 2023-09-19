@@ -41,6 +41,11 @@ jobs:
           cd newman
           mv *.html index.html
 
+      - uses: actions/checkout@v2
+        with:
+          lfs: true
+          token: ${{ secrets.ACCESS_TOKEN }}
+
       - name: Copy report to the gh-pages branch
         if: always()
         uses: crazy-max/ghaction-github-pages@v3
